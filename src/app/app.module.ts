@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PoModule } from '@portinari/portinari-ui';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,8 +12,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PoModule,
-    RouterModule.forRoot([])
+
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
