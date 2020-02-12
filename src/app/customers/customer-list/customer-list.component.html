@@ -1,0 +1,60 @@
+<po-page-list
+  p-title="Lista de clientes"
+  [p-actions]="actions"
+  [p-disclaimer-group]="disclaimerGroup"
+  [p-filter]="filter">
+
+  <po-table #table
+    p-checkbox
+    p-sort="true"
+    [p-actions]="tableActions"
+    [p-columns]="columns"
+    [p-items]="customers"
+    [p-loading]="loading"
+    [p-show-more-disabled]="!hasNext"
+    (p-show-more)="showMore()">
+  </po-table>
+
+</po-page-list>
+
+<po-modal
+  #advancedFilter
+  p-title="Busca avançada"
+  [p-primary-action]="advancedFilterPrimaryAction"
+  [p-secondary-action]="advancedFilterSecondaryAction">
+
+  <form #f="ngForm">
+    <po-input
+      class="po-sm-6"
+      name="name"
+      [(ngModel)]="name"
+      p-label="Nome">
+    </po-input>
+
+    <po-combo
+      class="po-sm-6"
+      name="city"
+      [(ngModel)]="city"
+      p-label="Cidade"
+      [p-options]="cityOptions">
+    </po-combo>
+
+    <po-radio-group
+      class="po-sm-7"
+      name="genre"
+      [(ngModel)]="genre"
+      p-columns="3"
+      p-label="Gênero"
+      [p-options]="genreOptions">
+    </po-radio-group>
+
+    <po-checkbox-group
+      class="po-sm-5"
+      name="status"
+      [(ngModel)]="status"
+      p-label="Status"
+      [p-options]="statusOptions">
+    </po-checkbox-group>
+  </form>
+
+</po-modal>

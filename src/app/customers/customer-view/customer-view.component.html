@@ -1,0 +1,79 @@
+<po-page-detail
+  p-title="Detalhes do cliente">
+
+  <po-divider p-label="Dados pessoais"></po-divider>
+
+  <div class="po-row">
+    <po-info class="po-md-5"
+      p-label="Nome"
+      [p-value]="customer.name">
+    </po-info>
+
+    <po-info class="po-md-5"
+      p-label="E-mail"
+      [p-value]="customer.email">
+    </po-info>
+
+    <po-tag class="po-md-2"
+      p-label="Status"
+      [p-type]="customer.status === 'Ativo' ? 'success' : 'danger'"
+      [p-value]="customer.status">
+    </po-tag>
+  </div>
+
+  <div class="po-row">
+    <po-info class="po-md-3"
+      p-label="Apelido"
+      [p-value]="customer.nickname">
+    </po-info>
+
+    <po-info class="po-md-3"
+      p-label="Nascimento"
+      [p-value]="customer.birthdate | date:'dd/MM/yyyy'">
+    </po-info>
+
+    <po-info class="po-md-3"
+      p-label="Gênero"
+      [p-value]="customer.genre">
+    </po-info>
+
+    <po-info class="po-md-3"
+      p-label="Nacionalidade"
+      [p-value]="customer.nationality">
+    </po-info>
+  </div>
+
+  <po-divider p-label="Filiação"></po-divider>
+
+  <div class="po-row">
+    <po-info class="po-md-5"
+      p-label="Nome da mãe"
+      [p-value]="customer.mother">
+    </po-info>
+
+    <po-info class="po-md-5"
+      p-label="Nome do pai"
+      [p-value]="customer.father">
+    </po-info>
+  </div>
+
+  <po-divider p-label="Endereço"></po-divider>
+
+  <div class="po-row">
+    <po-info class="po-md-6"
+      p-label="Rua"
+      [p-value]="customer.street">
+    </po-info>
+
+    <po-info class="po-md-3"
+      p-label="Cidade/Estado"
+      [p-value]="customer.city">
+    </po-info>
+
+    <po-info class="po-md-3"
+      p-label="País"
+      [p-value]="customer.country">
+    </po-info>
+  </div>
+
+</po-page-detail>

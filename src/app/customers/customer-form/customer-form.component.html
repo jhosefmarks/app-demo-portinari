@@ -1,0 +1,95 @@
+<po-page-edit
+  [p-title]="title"
+  [p-disable-submit]="formCustomer.invalid">
+
+  <form #formCustomer="ngForm">
+
+    <po-divider class="po-sm-12" p-label="Dados pessoais"></po-divider>
+
+    <po-input class="po-md-5"
+      name="name"
+      [(ngModel)]="customer.name"
+      p-required
+      p-label="Nome completo"
+      [p-disabled]="isUpdateOperation">
+    </po-input>
+
+    <po-email class="po-md-5"
+      name="email"
+      [(ngModel)]="customer.email"
+      p-required
+      p-label="E-mail"
+      [p-disabled]="isUpdateOperation">
+    </po-email>
+
+    <po-switch class="po-md-2"
+      name="status"
+      [(ngModel)]="customer.status"
+      p-required
+      p-label-off="Inativo"
+      p-label-on="Ativo"
+      p-label="Status"
+      [p-disabled]="isUpdateOperation">
+    </po-switch>
+
+    <po-input class="po-md-3"
+      name="nickname"
+      [(ngModel)]="customer.nickname"
+      p-label="Apelido">
+    </po-input>
+
+    <po-datepicker class="po-md-3"
+      name="birthdate"
+      [(ngModel)]="customer.birthdate"
+      p-label="Nascimento">
+    </po-datepicker>
+
+    <po-select class="po-md-3"
+      name="genre"
+      [(ngModel)]="customer.genre"
+      p-label="Gênero"
+      [p-options]="genreOptions">
+    </po-select>
+
+    <po-input class="po-md-3"
+      name="nationality"
+      [(ngModel)]="customer.nationality"
+      p-label="Nacionalidade">
+    </po-input>
+
+    <po-divider class="po-sm-12" p-label="Filiação"></po-divider>
+
+    <po-input class="po-md-5"
+      name="mother"
+      [(ngModel)]="customer.mother"
+      p-label="Nome da mãe">
+    </po-input>
+
+    <po-input class="po-md-5"
+      name="father"
+      [(ngModel)]="customer.father"
+      p-label="Nome do pai">
+    </po-input>
+
+    <po-divider class="po-sm-12" p-label="Endereço"></po-divider>
+
+    <po-input class="po-md-6"
+      name="street"
+      [(ngModel)]="customer.street"
+      p-label="Rua">
+    </po-input>
+
+    <po-input class="po-md-3"
+      name="city"
+      [(ngModel)]="customer.city"
+      p-label="Cidade/Estado">
+    </po-input>
+
+    <po-input class="po-md-3"
+      name="country"
+      [(ngModel)]="customer.country"
+      p-label="País">
+    </po-input>
+  </form>
+
+</po-page-edit>
