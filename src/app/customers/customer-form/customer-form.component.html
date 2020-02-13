@@ -96,7 +96,7 @@
       p-required
       p-label="Cidade"
       [p-disabled]="!state"
-      [p-filter-params]="{ transform: true, state: state }"
+      [p-filter-params]="{ transform: true, uf: state }"
       [p-filter-service]="cityService">
     </po-combo>
 

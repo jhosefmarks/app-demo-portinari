@@ -1,0 +1,11 @@
+<po-page-edit
+  [p-title]="title"
+  [p-disable-submit]="formCustomer?.form.invalid">
+
+  <po-dynamic-form #formCustomer
+    [p-fields]="fields"
+    [p-value]="customer"
+    [p-validate]="validate.bind(this)">
+  </po-dynamic-form>
+
+</po-page-edit>

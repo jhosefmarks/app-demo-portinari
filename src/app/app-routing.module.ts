@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+  { path: 'dynamic-customers', loadChildren: () => import('./dynamic-customers/dynamic-customers.module').then(m => m.DynamicCustomersModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 

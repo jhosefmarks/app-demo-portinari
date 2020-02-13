@@ -14,6 +14,10 @@ export class AppComponent {
     { label: 'Clientes', subItems: [
       { label: 'Lista de clientes', link: '/customers' },
       { label: 'Adicionar novo cliente', link: '/customers/new' },
+    ]},
+    { label: '(Dynamic) Clientes', subItems: [
+      { label: 'Lista de clientes', link: '/dynamic-customers' },
+      { label: 'Adicionar novo cliente', link: '/dynamic-customers/new' },
     ]}
   ];
 }

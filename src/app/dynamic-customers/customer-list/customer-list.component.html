@@ -1,0 +1,21 @@
+<po-page-dynamic-search
+  p-title="Lista de clientes"
+  [p-actions]="actions"
+  [p-filters]="filters"
+  (p-advanced-search)="advancedSearch($event)"
+  (p-quick-search)="quickSearch($event)"
+  (p-change-disclaimers)="changeDisclaimers($event)">
+
+  <po-table #table
+    p-selectable
+    p-sort="true"
+    [p-actions]="tableActions"
+    [p-columns]="columns"
+    [p-items]="customers"
+    [p-loading]="loading"
+    [p-show-more-disabled]="!hasNext"
+    (p-show-more)="showMore($event)"
+    (p-sort-by)="sortBy($event)">
+  </po-table>
+
+</po-page-dynamic-search>

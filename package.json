@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.0.1",
     "@angular/platform-browser-dynamic": "~8.0.1",
     "@angular/router": "~8.0.1",
+    "@portinari/portinari-templates": "^1.25.0",
     "@portinari/portinari-ui": "^1.25.0",
     "express": "^4.17.1",
     "path": "^0.12.7",
