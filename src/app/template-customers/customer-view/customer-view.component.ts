@@ -18,13 +18,11 @@ export class CustomerViewComponent {
     remove: 'template-customers'
   };
 
-  readonly fieldStatus = { property: 'statusDescription', label: 'Status', tag: true, gridColumns: 2, color: 'color-10' };
-
   readonly fields: Array<PoDynamicViewField> = [
     { property: 'id', visible: false, key: true },
     { property: 'name', label: 'Nome', divider: 'Dados pessoais', gridColumns: 5 },
     { property: 'email', label: 'E-mail', gridColumns: 5 },
-    this.fieldStatus,
+    { property: 'statusDescription', label: 'Status', tag: true, gridColumns: 2, color: 'color-10' },
     { property: 'nickname', label: 'Apelido', gridColumns: 3 },
     { property: 'birthdate', label: 'Nascimento', type: 'date', format: 'dd/MM/yyyy', gridColumns: 3 },
     { property: 'genreDescription', label: 'Gênero', gridColumns: 3 },

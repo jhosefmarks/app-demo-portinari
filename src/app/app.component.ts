@@ -22,6 +22,10 @@ export class AppComponent {
     { label: '(Template) Clientes', subItems: [
       { label: 'Lista de clientes', link: '/template-customers' },
       { label: 'Adicionar novo cliente', link: '/template-customers/new' },
+    ]},
+    { label: '(Metadata) Clientes', subItems: [
+      { label: 'Lista de clientes', link: '/metadata-customers' },
+      { label: 'Adicionar novo cliente', link: '/metadata-customers/new' },
     ]}
   ];
 }

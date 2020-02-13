@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   { path: 'dynamic-customers', loadChildren: () => import('./dynamic-customers/dynamic-customers.module').then(m => m.DynamicCustomersModule) },
   { path: 'template-customers', loadChildren: () => import('./template-customers/template-customers.module').then(m => m.TemplateCustomersModule) },
+  { path: 'metadata-customers', loadChildren: () => import('./metadata-customers/metadata-customers.module').then(m => m.MetadataCustomersModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
