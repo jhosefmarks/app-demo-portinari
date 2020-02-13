@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 
+import { PoTemplatesModule } from '@portinari/portinari-templates';
+
 import { SharedModule } from './../shared/shared.module';
 
-import { CustomersRoutingModule } from './customers-routing.module';
+import { TemplateCustomersRoutingModule } from './template-customers-routing.module';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
@@ -14,9 +16,11 @@ import { CustomerViewComponent } from './customer-view/customer-view.component';
     CustomerViewComponent
   ],
   imports: [
+    PoTemplatesModule,
+
     SharedModule,
 
-    CustomersRoutingModule
+    TemplateCustomersRoutingModule,
   ]
 })
-export class CustomersModule { }
+export class TemplateCustomersModule { }

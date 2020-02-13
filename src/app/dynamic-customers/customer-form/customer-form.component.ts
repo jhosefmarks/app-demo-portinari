@@ -109,7 +109,7 @@ export class CustomerFormComponent implements OnDestroy, OnInit {
   }
 
   get title() {
-    return this.isUpdateOperation ? 'Atualizando cliente' : 'Novo cliente';
+    return this.isUpdateOperation ? '(D) Atualizando cliente' : '(D) Novo cliente';
   }
 
   private loadData(id) {
