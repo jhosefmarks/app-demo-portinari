@@ -13,7 +13,7 @@ import { PoNotificationService } from '@portinari/portinari-ui';
 })
 export class CustomerViewComponent implements OnDestroy, OnInit {
 
-  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
+  private readonly url: string = 'http://localhost:5000/api/samples/v1/people';
 
   private customerRemoveSub: Subscription;
   private customerSub: Subscription;
@@ -25,7 +25,7 @@ export class CustomerViewComponent implements OnDestroy, OnInit {
     private httpClient: HttpClient,
     private route: ActivatedRoute,
     private router: Router,
-    private thfNotification: PoNotificationService) { }
+    private poNotification: PoNotificationService) { }
 
   ngOnInit() {
     this.paramsSub = this.route.params.subscribe(params => this.loadData(params['id']));
@@ -51,7 +51,7 @@ export class CustomerViewComponent implements OnDestroy, OnInit {
   remove() {
     this.customerRemoveSub = this.httpClient.delete(`${this.url}/${this.customer.id}`)
       .subscribe(() => {
-        this.thfNotification.warning('Cadastro do cliente apagado com sucesso.');
+        this.poNotification.warning('Cadastro do cliente apagado com sucesso.');
 
         this.back();
       });
@@ -61,12 +61,12 @@ export class CustomerViewComponent implements OnDestroy, OnInit {
     this.customerSub = this.httpClient.get(`${this.url}/${id}`)
       .pipe(
         map((customer: any) => {
-          const status = { Active: 'Ativo', Inactive: 'Inativo' };
+          const status = { active: 'Ativo', inactive: 'Inativo' };
 
-          const genre = { Female: 'Feminino', Male: 'Masculino', Other: 'Outros' };
+          const genre = { female: 'Feminino', male: 'Masculino', other: 'Outros' };
 
-          customer.status = status[customer.status];
-          customer.genre = genre[customer.genre];
+          customer.statusDescription = status[customer.status];
+          customer.genreDescription = genre[customer.genre];
 
           return customer;
         })

@@ -35,12 +35,14 @@
     <po-input class="po-md-3"
       name="nickname"
       [(ngModel)]="customer.nickname"
+      p-optional
       p-label="Apelido">
     </po-input>
 
     <po-datepicker class="po-md-3"
       name="birthdate"
       [(ngModel)]="customer.birthdate"
+      p-optional
       p-label="Nascimento">
     </po-datepicker>
 
@@ -48,13 +50,61 @@
       name="genre"
       [(ngModel)]="customer.genre"
       p-label="Gênero"
+      p-optional
       [p-options]="genreOptions">
     </po-select>
 
     <po-input class="po-md-3"
       name="nationality"
       [(ngModel)]="customer.nationality"
+      p-optional
       p-label="Nacionalidade">
+    </po-input>
+
+    <po-divider class="po-sm-12" p-label="Endereço"></po-divider>
+
+    <po-input class="po-md-4"
+      name="street"
+      [(ngModel)]="customer.street"
+      p-required
+      p-label="Rua">
+    </po-input>
+
+    <!-- <po-lookup class="po-md-3"
+      name="cityLookup"
+      [(ngModel)]="customer.city"
+      p-required
+      p-field-value="ibge"
+      p-field-label="name"
+      p-label="Cidade"
+      [p-filter-service]="cityService">
+    </po-lookup> -->
+
+    <po-combo class="po-md-2"
+      name="state"
+      [(ngModel)]="state"
+      p-label="Estado"
+      [p-filter-params]="{ transform: true }"
+      [p-filter-service]="stateService"
+      (p-change)="customer.city = undefined">
+    </po-combo>
+
+    <po-combo class="po-md-3"
+      name="city"
+      [(ngModel)]="customer.city"
+      p-sort
+      p-required
+      p-label="Cidade"
+      [p-disabled]="!state"
+      [p-filter-params]="{ transform: true, state: state }"
+      [p-filter-service]="cityService">
+    </po-combo>
+
+    <po-input class="po-md-3"
+      name="country"
+      [(ngModel)]="customer.country"
+      p-optional
+      p-label="País">
     </po-input>
 
     <po-divider class="po-sm-12" p-label="Filiação"></po-divider>
@@ -62,34 +112,17 @@
     <po-input class="po-md-5"
       name="mother"
       [(ngModel)]="customer.mother"
+      p-optional
       p-label="Nome da mãe">
     </po-input>
 
     <po-input class="po-md-5"
       name="father"
       [(ngModel)]="customer.father"
+      p-optional
       p-label="Nome do pai">
     </po-input>
 
-    <po-divider class="po-sm-12" p-label="Endereço"></po-divider>
-
-    <po-input class="po-md-6"
-      name="street"
-      [(ngModel)]="customer.street"
-      p-label="Rua">
-    </po-input>
-
-    <po-input class="po-md-3"
-      name="city"
-      [(ngModel)]="customer.city"
-      p-label="Cidade/Estado">
-    </po-input>
-
-    <po-input class="po-md-3"
-      name="country"
-      [(ngModel)]="customer.country"
-      p-label="País">
-    </po-input>
   </form>
 
 </po-page-edit>

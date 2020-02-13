@@ -5,14 +5,15 @@
   [p-filter]="filter">
 
   <po-table #table
-    p-checkbox
+    p-selectable
     p-sort="true"
     [p-actions]="tableActions"
     [p-columns]="columns"
     [p-items]="customers"
     [p-loading]="loading"
     [p-show-more-disabled]="!hasNext"
-    (p-show-more)="showMore()">
+    (p-sort-by)="sortBy($event)"
+    (p-show-more)="showMore($event)">
   </po-table>
 
 </po-page-list>
@@ -36,7 +37,8 @@
       name="city"
       [(ngModel)]="city"
       p-label="Cidade"
-      [p-options]="cityOptions">
+      [p-filter-params]="{ transform: true }"
+      [p-filter-service]="cityService">
     </po-combo>
 
     <po-radio-group

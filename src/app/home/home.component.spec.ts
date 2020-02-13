@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { ThfPageModule } from '@totvs/thf-ui';
+import { PoPageModule } from '@portinari/portinari-ui';
 
 import { HomeComponent } from './home.component';
 
@@ -14,7 +14,7 @@ describe('HomeComponent', () => {
       declarations: [ HomeComponent ],
       imports: [
         RouterTestingModule.withRoutes([]),
-        ThfPageModule
+        PoPageModule
       ]
     })
     .compileComponents();

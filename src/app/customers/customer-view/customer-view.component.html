@@ -16,8 +16,8 @@
 
     <po-tag class="po-md-2"
       p-label="Status"
-      [p-type]="customer.status === 'Ativo' ? 'success' : 'danger'"
-      [p-value]="customer.status">
+      [p-type]="customer.status === 'active' ? 'success' : 'danger'"
+      [p-value]="customer.statusDescription">
     </po-tag>
   </div>
 
@@ -34,26 +34,12 @@
 
     <po-info class="po-md-3"
       p-label="Gênero"
-      [p-value]="customer.genre">
+      [p-value]="customer.genreDescription">
     </po-info>
 
     <po-info class="po-md-3"
       p-label="Nacionalidade"
       [p-value]="customer.nationality">
-    </po-info>
-  </div>
-
-  <po-divider p-label="Filiação"></po-divider>
-
-  <div class="po-row">
-    <po-info class="po-md-5"
-      p-label="Nome da mãe"
-      [p-value]="customer.mother">
-    </po-info>
-
-    <po-info class="po-md-5"
-      p-label="Nome do pai"
-      [p-value]="customer.father">
     </po-info>
   </div>
 
@@ -73,6 +59,20 @@
     <po-info class="po-md-3"
       p-label="País"
       [p-value]="customer.country">
+    </po-info>
+  </div>
+
+  <po-divider p-label="Filiação"></po-divider>
+
+  <div class="po-row">
+    <po-info class="po-md-5"
+      p-label="Nome da mãe"
+      [p-value]="customer.mother">
+    </po-info>
+
+    <po-info class="po-md-5"
+      p-label="Nome do pai"
+      [p-value]="customer.father">
     </po-info>
   </div>
 

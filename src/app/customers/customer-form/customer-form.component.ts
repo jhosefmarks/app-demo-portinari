@@ -16,22 +16,26 @@ const actionUpdate = 'update';
 })
 export class CustomerFormComponent implements OnDestroy, OnInit {
 
-  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
+  private readonly url: string = 'http://localhost:5000/api/samples/v1/people';
 
   private action: string = actionInsert;
   private customerSub: Subscription;
   private paramsSub: Subscription;
 
+  public readonly cityService: string = 'http://localhost:5000/api/samples/v1/cities';
+  public readonly stateService: string = 'http://localhost:5000/api/samples/v1/states';
+
   public readonly genreOptions: Array<PoSelectOption> = [
-    { label: 'Feminino', value: 'Female' },
-    { label: 'Masculino', value: 'Male' },
-    { label: 'Outros', value: 'Other' }
+    { label: 'Feminino', value: 'female' },
+    { label: 'Masculino', value: 'male' },
+    { label: 'Outros', value: 'other' }
   ];
 
-  public customer: any = { };
+  public customer: any = { status: false };
+  public state: string = '';
 
   constructor(
-    private thfNotification: PoNotificationService,
+    private poNotification: PoNotificationService,
     private router: Router,
     private route: ActivatedRoute,
     private httpClient: HttpClient) { }
@@ -60,7 +64,7 @@ export class CustomerFormComponent implements OnDestroy, OnInit {
   save() {
     const customer = {...this.customer};
 
-    customer.status = customer.status ? 'Active' : 'Inactive';
+    customer.status = customer.status ? 'active' : 'inactive';
 
     this.customerSub = this.isUpdateOperation
       ? this.httpClient.put(`${this.url}/${customer.id}`, customer)
@@ -74,14 +78,15 @@ export class CustomerFormComponent implements OnDestroy, OnInit {
   }
 
   get title() {
-    return this.isUpdateOperation ? 'Atualizando dados do cliente' : 'Novo cliente';
+    return this.isUpdateOperation ? 'Atualizando cliente' : 'Novo cliente';
   }
 
   private loadData(id) {
     this.customerSub = this.httpClient.get(`${this.url}/${id}`)
       .pipe(
         map((customer: any) => {
-          customer.status = customer.status === 'Active';
+          customer.status = customer.status === 'active';
+          this.state = customer.uf;
 
           return customer;
         })
@@ -90,7 +95,7 @@ export class CustomerFormComponent implements OnDestroy, OnInit {
   }
 
   private navigateToList(msg: string) {
-    this.thfNotification.success(msg);
+    this.poNotification.success(msg);
 
     this.router.navigateByUrl('/customers');
   }
