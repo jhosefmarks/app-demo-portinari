@@ -14,7 +14,7 @@ import {
 })
 export class CustomerListComponent implements OnInit, OnDestroy {
 
-  private readonly url: string = 'http://localhost:5000/api/samples/v1/people';
+  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
 
   private customerRemoveSub: Subscription;
   private customersRemoveSub: Subscription;
@@ -23,7 +23,7 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   private searchTerm: string = '';
   private searchFilters: any = { };
 
-  public readonly cityService: string = 'http://localhost:5000/api/samples/v1/cities';
+  public readonly cityService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/cities';
 
   public readonly actions: Array<PoPageAction> = [
     { action: this.onNewCustomer.bind(this), label: 'Cadastrar', icon: 'po-icon-user-add' },

@@ -7,16 +7,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: PoPageDynamicTableComponent, data: {
-    serviceApi: 'http://localhost:5000/api/samples/v1/people'
+    serviceApi: 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people'
   } },
   { path: 'new', component: PoPageDynamicEditComponent, data: {
-    serviceApi: 'http://localhost:5000/api/samples/v1/people'
+    serviceApi: 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people'
   } },
   { path: 'view/:id', component: PoPageDynamicDetailComponent, data: {
-    serviceApi: 'http://localhost:5000/api/samples/v1/people'
+    serviceApi: 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people'
   } },
   { path: 'edit/:id', component: PoPageDynamicEditComponent, data: {
-    serviceApi: 'http://localhost:5000/api/samples/v1/people'
+    serviceApi: 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people'
   } }
 ];
 

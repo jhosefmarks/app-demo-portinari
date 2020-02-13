@@ -16,14 +16,14 @@ const actionUpdate = 'update';
 })
 export class CustomerFormComponent implements OnDestroy, OnInit {
 
-  private readonly url: string = 'http://localhost:5000/api/samples/v1/people';
+  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
 
   private action: string = actionInsert;
   private customerSub: Subscription;
   private paramsSub: Subscription;
 
-  public readonly cityService: string = 'http://localhost:5000/api/samples/v1/cities';
-  public readonly stateService: string = 'http://localhost:5000/api/samples/v1/states';
+  public readonly cityService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/cities';
+  public readonly stateService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/states';
 
   public readonly genreOptions: Array<PoSelectOption> = [
     { label: 'Feminino', value: 'female' },

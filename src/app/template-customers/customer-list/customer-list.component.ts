@@ -11,9 +11,9 @@ import { PoPageDynamicTableActions } from '@portinari/portinari-templates';
 })
 export class CustomerListComponent {
 
-  public readonly serviceApi: string = 'http://localhost:5000/api/samples/v1/people';
+  public readonly serviceApi: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
 
-  public readonly cityService: string = 'http://localhost:5000/api/samples/v1/cities';
+  public readonly cityService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/cities';
 
   public readonly actions: PoPageDynamicTableActions = {
     detail: 'template-customers/view/:id',

@@ -10,7 +10,7 @@ import { PoNotificationService, PoDynamicViewField } from '@portinari/portinari-
 })
 export class CustomerViewComponent {
 
-  public readonly serviceApi = 'http://localhost:5000/api/samples/v1/people';
+  public readonly serviceApi = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
 
   public readonly actions = {
     back: 'template-customers',

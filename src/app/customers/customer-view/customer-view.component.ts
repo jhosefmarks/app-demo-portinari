@@ -13,7 +13,7 @@ import { PoNotificationService } from '@portinari/portinari-ui';
 })
 export class CustomerViewComponent implements OnDestroy, OnInit {
 
-  private readonly url: string = 'http://localhost:5000/api/samples/v1/people';
+  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
 
   private customerRemoveSub: Subscription;
   private customerSub: Subscription;
