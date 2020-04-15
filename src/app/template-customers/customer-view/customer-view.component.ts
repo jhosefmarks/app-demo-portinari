@@ -1,8 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component } from '@angular/core';
 
-import { PoNotificationService, PoDynamicViewField } from '@portinari/portinari-ui';
+import { PoDynamicViewField } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-customer-view',

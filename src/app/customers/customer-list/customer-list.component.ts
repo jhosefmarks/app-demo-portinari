@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import {
-  PoCheckboxGroupOption, PoComboOption, PoRadioGroupOption, PoDisclaimer, PoDisclaimerGroup,
+  PoCheckboxGroupOption, PoRadioGroupOption, PoDisclaimer, PoDisclaimerGroup,
   PoModalComponent, PoModalAction, PoNotificationService, PoPageFilter, PoPageAction,
   PoTableAction, PoTableColumn, PoTableComponent
-} from '@portinari/portinari-ui';
+} from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-customer-list',

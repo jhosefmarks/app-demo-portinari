@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
-import { PoNotificationService, PoSelectOption } from '@portinari/portinari-ui';
+import { PoNotificationService, PoSelectOption } from '@po-ui/ng-components';
 
 const actionInsert = 'insert';
 const actionUpdate = 'update';

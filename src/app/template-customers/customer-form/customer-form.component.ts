@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { PoPageDynamicEditActions } from '@portinari/portinari-templates';
+import { PoPageDynamicEditActions } from '@po-ui/ng-templates';
 
 @Component({
   selector: 'app-customer-form',

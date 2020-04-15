@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { PoModule } from '@portinari/portinari-ui';
+import { PoModule } from '@po-ui/ng-components';
 
 @NgModule({
   imports: [

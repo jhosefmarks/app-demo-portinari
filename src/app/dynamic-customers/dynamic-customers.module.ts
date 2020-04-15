@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { PoTemplatesModule } from '@portinari/portinari-templates';
+import { PoTemplatesModule } from '@po-ui/ng-templates';
 
 import { SharedModule } from './../shared/shared.module';
 

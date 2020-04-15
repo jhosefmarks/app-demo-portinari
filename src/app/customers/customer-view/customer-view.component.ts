@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
-import { PoNotificationService } from '@portinari/portinari-ui';
+import { PoNotificationService } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-customer-view',

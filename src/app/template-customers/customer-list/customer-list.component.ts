@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-import {
-  PoNotificationService, PoPageAction, PoTableAction, PoTableColumn, PoTableComponent
-} from '@portinari/portinari-ui';
-import { PoPageDynamicTableActions } from '@portinari/portinari-templates';
+import { PoPageDynamicTableActions } from '@po-ui/ng-templates';
 
 @Component({
   selector: 'app-customer-list',

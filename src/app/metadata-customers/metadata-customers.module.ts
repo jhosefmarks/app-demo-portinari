@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { PoTemplatesModule, PoPageDynamicTableComponent, PoPageDynamicEditComponent, PoPageDynamicDetailComponent } from '@portinari/portinari-templates';
+import { PoTemplatesModule, PoPageDynamicTableComponent, PoPageDynamicEditComponent, PoPageDynamicDetailComponent } from '@po-ui/ng-templates';
 
 import { SharedModule } from './../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';

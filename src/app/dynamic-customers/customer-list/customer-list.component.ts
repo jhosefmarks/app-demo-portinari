@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 
 import {
   PoNotificationService, PoPageAction, PoTableAction, PoTableColumn, PoTableComponent
-} from '@portinari/portinari-ui';
+} from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-customer-list',

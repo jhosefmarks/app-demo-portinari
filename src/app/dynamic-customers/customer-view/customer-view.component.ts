@@ -2,10 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
-import { PoNotificationService, PoDynamicViewField } from '@portinari/portinari-ui';
+import { PoNotificationService, PoDynamicViewField } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-customer-view',
