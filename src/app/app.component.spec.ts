@@ -1,4 +1,4 @@
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { PoMenuModule, PoPageModule, PoToolbarModule } from '@po-ui/ng-components';
@@ -6,7 +6,7 @@ import { PoMenuModule, PoPageModule, PoToolbarModule } from '@po-ui/ng-component
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         PoMenuModule,
