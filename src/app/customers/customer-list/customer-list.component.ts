@@ -80,7 +80,6 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   public readonly filter: PoPageFilter = {
     action: this.onActionSearch.bind(this),
     advancedAction: this.openAdvancedFilter.bind(this),
-    ngModel: 'searchTerm',
     placeholder: 'Pesquisa rápida ...'
   };
 
@@ -191,7 +190,8 @@ export class CustomerListComponent implements OnInit, OnDestroy {
       });
   }
 
-  private onActionSearch() {
+  private onActionSearch(searchTerm) {
+    this.searchTerm = searchTerm;
     this.disclaimerGroup.disclaimers = [{
       label: `Pesquisa rápida: ${this.searchTerm}`,
       property: 'search',
