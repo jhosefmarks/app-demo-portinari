@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 
 import { PoPageDynamicTableActions } from '@po-ui/ng-templates';
 
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html'
 })
 export class CustomerListComponent {
 
-  public readonly serviceApi: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
+  public readonly serviceApi: string = environment.apiUrl + '/api/samples/v1/people';
 
-  public readonly cityService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/cities';
+  public readonly cityService: string = environment.apiUrl + '/api/samples/v1/cities';
 
   public readonly actions: PoPageDynamicTableActions = {
     detail: 'template-customers/view/:id',

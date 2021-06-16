@@ -8,13 +8,15 @@ import {
   PoNotificationService, PoPageAction, PoTableAction, PoTableColumn, PoTableComponent
 } from '@po-ui/ng-components';
 
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html'
 })
 export class CustomerListComponent implements OnInit, OnDestroy {
 
-  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
+  private readonly url: string = environment.apiUrl + '/api/samples/v1/people';
 
   private customerRemoveSub: Subscription;
   private customersRemoveSub: Subscription;
@@ -23,7 +25,7 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   private searchTerm: string = '';
   private searchFilters: any = { };
 
-  public readonly cityService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/cities';
+  public readonly cityService: string = environment.apiUrl + '/api/samples/v1/cities';
 
   public readonly actions: Array<PoPageAction> = [
     { action: this.onNewCustomer.bind(this), label: 'Cadastrar', icon: 'po-icon-user-add' },

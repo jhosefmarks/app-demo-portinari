@@ -10,13 +10,15 @@ import {
   PoTableAction, PoTableColumn, PoTableComponent
 } from '@po-ui/ng-components';
 
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html'
 })
 export class CustomerListComponent implements OnInit, OnDestroy {
 
-  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
+  private readonly url: string = environment.apiUrl + '/api/samples/v1/people';
 
   private customerRemoveSub: Subscription;
   private customersRemoveSub: Subscription;
@@ -25,7 +27,7 @@ export class CustomerListComponent implements OnInit, OnDestroy {
   private searchTerm: string = '';
   private searchFilters: any;
 
-  public readonly cityService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/cities';
+  public readonly cityService: string = environment.apiUrl + '/api/samples/v1/cities';
 
   public readonly actions: Array<PoPageAction> = [
     { action: this.onNewCustomer.bind(this), label: 'Cadastrar', icon: 'po-icon-user-add' },
@@ -42,18 +44,6 @@ export class CustomerListComponent implements OnInit, OnDestroy {
     label: 'Cancelar'
   };
 
-  // public readonly cityOptions: Array<PoComboOption> = [
-  //   { label: 'Araquari', value: 'Araquari' },
-  //   { label: 'Belém', value: 'Belém' },
-  //   { label: 'Campinas', value: 'Campinas' },
-  //   { label: 'Curitiba', value: 'Curitiba' },
-  //   { label: 'Joinville', value: 'Joinville' },
-  //   { label: 'Osasco', value: 'Osasco' },
-  //   { label: 'Rio de Janeiro', value: 'Rio de Janeiro' },
-  //   { label: 'São Bento', value: 'São Bento' },
-  //   { label: 'São Francisco', value: 'São Francisco' },
-  //   { label: 'São Paulo', value: 'São Paulo' }
-  // ];
   public readonly columns: Array<PoTableColumn> = [
     { property: 'name', label: 'Nome' },
     { property: 'nickname', label: 'Apelido' },

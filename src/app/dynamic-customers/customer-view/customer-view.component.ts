@@ -6,13 +6,15 @@ import { Subscription } from 'rxjs';
 
 import { PoNotificationService, PoDynamicViewField } from '@po-ui/ng-components';
 
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html'
 })
 export class CustomerViewComponent implements OnDestroy, OnInit {
 
-  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
+  private readonly url: string = environment.apiUrl + '/api/samples/v1/people';
 
   private customerRemoveSub: Subscription;
   private customerSub: Subscription;

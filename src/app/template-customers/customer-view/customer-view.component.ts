@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 
 import { PoDynamicViewField } from '@po-ui/ng-components';
 
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html'
 })
 export class CustomerViewComponent {
 
-  public readonly serviceApi = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
+  public readonly serviceApi = environment.apiUrl + '/api/samples/v1/people';
 
   public readonly actions = {
     back: 'template-customers',

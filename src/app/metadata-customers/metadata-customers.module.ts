@@ -5,18 +5,20 @@ import { PoTemplatesModule, PoPageDynamicTableComponent, PoPageDynamicEditCompon
 import { SharedModule } from './../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 
+import { environment } from 'src/environments/environment';
+
 const routes: Routes = [
   { path: '', component: PoPageDynamicTableComponent, data: {
-    serviceApi: 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people'
+    serviceApi: environment.apiUrl + '/api/samples/v1/people'
   } },
   { path: 'new', component: PoPageDynamicEditComponent, data: {
-    serviceApi: 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people'
+    serviceApi: environment.apiUrl + '/api/samples/v1/people'
   } },
   { path: 'view/:id', component: PoPageDynamicDetailComponent, data: {
-    serviceApi: 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people'
+    serviceApi: environment.apiUrl + '/api/samples/v1/people'
   } },
   { path: 'edit/:id', component: PoPageDynamicEditComponent, data: {
-    serviceApi: 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people'
+    serviceApi: environment.apiUrl + '/api/samples/v1/people'
   } }
 ];
 

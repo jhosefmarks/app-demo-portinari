@@ -7,6 +7,8 @@ import { Subscription } from 'rxjs';
 
 import { PoNotificationService, PoSelectOption } from '@po-ui/ng-components';
 
+import { environment } from 'src/environments/environment';
+
 const actionInsert = 'insert';
 const actionUpdate = 'update';
 
@@ -16,14 +18,14 @@ const actionUpdate = 'update';
 })
 export class CustomerFormComponent implements OnDestroy, OnInit {
 
-  private readonly url: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/people';
+  private readonly url: string = environment.apiUrl + '/api/samples/v1/people';
 
   private action: string = actionInsert;
   private customerSub: Subscription;
   private paramsSub: Subscription;
 
-  public readonly cityService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/cities';
-  public readonly stateService: string = 'https://app-demo-portinari-api.herokuapp.com/api/samples/v1/states';
+  public readonly cityService: string = environment.apiUrl + '/api/samples/v1/cities';
+  public readonly stateService: string = environment.apiUrl + '/api/samples/v1/states';
 
   public readonly genreOptions: Array<PoSelectOption> = [
     { label: 'Feminino', value: 'female' },
