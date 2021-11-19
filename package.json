@@ -19,7 +19,6 @@
     "@angular/platform-browser": "~13.0.2",
     "@angular/platform-browser-dynamic": "~13.0.2",
     "@angular/router": "~13.0.2",
-    "@po-ui/ng-components": "^2.10.0",
     "@po-ui/ng-templates": "5.16.0",
     "express": "^4.17.1",
     "path": "^0.12.7",
